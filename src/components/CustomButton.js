@@ -13,10 +13,10 @@ export default function CustomButton({ children, containerStyle }) {
 const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: COLORS.white,
-    width: "90%",
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    height: 45,
+    height: 35,
+    paddingHorizontal: 30,
   },
 });
