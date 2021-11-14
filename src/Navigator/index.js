@@ -25,8 +25,6 @@ const Navigation = () => {
             height: 140,
             backgroundColor: COLORS.primary,
             borderTopColor: "transparent",
-            borderTopRightRadius: 20,
-            borderTopLeftRadius: 20,
           },
           tabBarShowLabel: false,
         }}
@@ -87,11 +85,11 @@ const Navigation = () => {
           options={{
             tabBarIcon: ({ color, size, focused }) => (
               <TabIcon
-                label="Trade"
+                label={tradeModalVisible ? "Close" : "Trade"}
                 color={color}
                 size={size}
                 focused={focused}
-                icon="briefcase"
+                icon={tradeModalVisible ? "times" : "dollar-sign"}
                 onPress={() => {
                   dispatch(showModal(!tradeModalVisible));
                 }}

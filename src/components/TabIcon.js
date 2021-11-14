@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { COLORS, FONTS } from "../constants/Theme";
 
 export default function TabIcon({ icon, label, onPress, size, focused }) {
-  if (label === "Trade") {
+  if (label === "Trade" || label === "Close") {
     return (
       <TouchableOpacity
         style={styles.containerTrade}
@@ -12,7 +12,7 @@ export default function TabIcon({ icon, label, onPress, size, focused }) {
           onPress();
         }}
       >
-        <FontAwesome5 name="dollar-sign" color={COLORS.white} size={size} />
+        <FontAwesome5 name={icon} color={COLORS.white} size={size} />
         <Text style={[FONTS.body5, { color: COLORS.white }]}>{label}</Text>
       </TouchableOpacity>
     );

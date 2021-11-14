@@ -65,6 +65,7 @@ export const FONTS = {
     fontFamily: "Avenir",
     fontSize: SIZES.body3,
     lineHeight: 22,
+    fontWeight: "bold",
   },
   body4: {
     fontFamily: "Avenir",
