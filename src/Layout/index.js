@@ -32,13 +32,16 @@ export default function Layout(props) {
   });
 
   return (
-    <View>
+    <>
       {props.children}
+      {tradeModalVisible && (
+        <Animated.View style={styles.backdrop} opacity={modalAnimatedValue} />
+      )}
       <Animated.View style={[styles.bottomModalContainer, { top: modalY }]}>
         <CustomButton>Transfer</CustomButton>
         <CustomButton containerStyle={styles.m10}>Withdraw</CustomButton>
       </Animated.View>
-    </View>
+    </>
   );
 }
 
@@ -51,4 +54,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   m10: { marginTop: 10 },
+  backdrop: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: COLORS.transparentBlack,
+  },
 });
